@@ -3,19 +3,20 @@
 
 // we've started you off with Express (https://expressjs.com/)
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
-app.set ("view enginea", "pug");
-app.set ("views","./views");
+
 
 const express = require("express"); 
 const app = express();
+app.set ("view engines", "pug");
+app.set ("views","./views");
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
-  response.render("index");
+  response.send("tôi yêu lập trình");
 });
 
 app.get("/todos", (req, res) => {
-  res.render( ".views/index.pug", {
+  res.render( "index.pug", {
     users : [ 
          { id: 0, name: "đi chợ"},
          { id: 2, name: "đi chợ"},
