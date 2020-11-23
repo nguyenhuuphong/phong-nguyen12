@@ -11,13 +11,18 @@ const app = express();
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
-  response.render("I love CodersX");
+  response.render("index");
 });
 
 app.get("/todos", (req, res) => {
-  res.send(
-    "<ul><li>Đi chợ</li><li>Nấu cơm</li><li>Rửa bát</li><li>Học code tại CodersX</li></ul>"
-  );
+  res.render( ".views/index.pug", {
+    users : [ 
+         { id: 0, name: "đi chợ"},
+         { id: 2, name: "đi chợ"},
+         { id: 3, name: "đi chợ"},
+         { id: 4, name: "đi chợ"}
+    ]
+});
 });
 
 // listen for requests :)
