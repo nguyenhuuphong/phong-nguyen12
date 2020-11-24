@@ -7,22 +7,24 @@
 
 const express = require("express"); 
 const app = express();
-app.set ("view engines", "pug");
+
+app.set ("view engine", "pug");
 app.set ("views","./views");
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   response.send("tôi yêu lập trình");
 });
-
-app.get("/todos", (req, res) => {
-  res.render( "index.pug", {
-    users : [ 
+ 
+var user =[ 
          { id: 0, name: "đi chợ"},
          { id: 2, name: "đi chợ"},
          { id: 3, name: "đi chợ"},
          { id: 4, name: "đi chợ"}
     ]
+app.get("/todo", (req, res) => {
+  res.render( "index", {
+    users: user
 });
 });
 
