@@ -41,11 +41,11 @@ app.get("/todo/123", (req, res) => {
 
 });
 */
-app.get("/todo?q=nâu", (req, res) => {
+app.get("/todo", (req, res) => {
 
   var   match = user.filter(function(item) {
-           return item.name.indexOf("đi") !== -1;
-
+           return item.name.indexOf("nâu") !== -1;
+     // liệt kê ra những list là nâu
   });
   res.render('index', {
 		todo: match 
