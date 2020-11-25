@@ -23,7 +23,7 @@ var user =[
          { id: 3, name: "nâu cháo"},
          { id: 4, name: "nâu ngủ"}
     ]
-app.get("/todo", (req, res) => {
+app.get("/xtodo", (req, res) => {
   res.render( "index", {
     todo: user
 });
@@ -47,7 +47,7 @@ app.get("/todo?q=nâu", (req, res) => {
            return item.name.indexOf("đi") !== -1;
 
   });
-  res.render('index-1', {
+  res.render('index', {
 		todo: match 
 	});
 });
