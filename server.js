@@ -28,13 +28,14 @@ app.get("/todo", (req, res) => {
     todo: user
 });
 });
-app.get("/todo?q=nâu", (req, res) => {
+app.get("/todo/123", (req, res) => {
   var q = req.query.q;
-  var match = user.filter(function(item) {
-           return item.name.toLowerCase().indexOf(q.toLowerCase()) === "nâu";
-});
+  var   match = user.filter(function(item) {
+           return item.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+
+  });
   res.render('index', {
-		todo: match,
+		todo: match 
 	});
 
 });
