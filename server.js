@@ -61,10 +61,11 @@ app.get("/todos", (request, response) => {
 });
 
 app.get("/todo/create", (request, response) => {
-  response.render("create")
+  response.render("create");
 });
 app.post("/todo/create",(req, res)=> {
   user.push(req.body);
+  res.redirect("/todo");
 
 });
 // listen for requests :)
