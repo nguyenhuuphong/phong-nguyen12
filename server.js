@@ -40,6 +40,17 @@ app.get("/todo/123", (req, res) => {
 
 });
 
+app.get("/todo?q=nâu", (req, res) => {
+  var q = req.query.q;
+  var   match = user.filter(function(item) {
+           return item.name.toLowerCase().indexOf(q.toLowerCase()) === q;
+
+  });
+  res.render('index', {
+		todo: match 
+	});
+});
+
 // listen for requests :)
 app.listen(process.env.PORT, () => {
   console.log("Server listening on port " + process.env.PORT);
