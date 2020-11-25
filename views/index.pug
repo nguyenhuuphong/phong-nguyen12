@@ -1,5 +1,7 @@
 h1 users
-   form
+   form(action="/todo", method="GET")
+	     input(type/text, name="q")
+       button search   
 ul 
  each user in todo
-  li=user.name
+    li=user.name
