@@ -1,7 +1,7 @@
 h1 users
-   form(action="/todo", method="GET")
-	     input(type/text, name="q")
-       button search   
+form(action="/todo/123", method="GET")
+	input(type/text, name="q" value=q)
+	button search      
 ul 
- each user in todo
+ each user in todo?q=nau
     li=user.name

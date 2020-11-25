@@ -28,6 +28,16 @@ app.get("/todo", (req, res) => {
     todo: user
 });
 });
+app.get("/todo?p=nau", (req, res) => {
+  var q = req.query.q;
+  var match = user.filter(function(item) {
+           return item.name.toLowerCase().indexOf(q.toLowerCase()) === "nấu";
+});
+  res.render('index', {
+		todo: match,
+	});
+
+});
 
 // listen for requests :)
 app.listen(process.env.PORT, () => {
