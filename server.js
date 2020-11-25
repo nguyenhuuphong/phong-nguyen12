@@ -20,18 +20,18 @@ app.get("/", (request, response) => {
 var user =[ 
          { id: 0, name: "đi chợ"},
          { id: 2, name: "nấu ăn"},
-         { id: 3, name: "đi ăn"},
-         { id: 4, name: "đi ngủ"}
+         { id: 3, name: "nâu cháo"},
+         { id: 4, name: "nâu ngủ"}
     ]
 app.get("/todo", (req, res) => {
   res.render( "index", {
     todo: user
 });
 });
-app.get("/todo?p=nau", (req, res) => {
+app.get("/todo?q=nâu", (req, res) => {
   var q = req.query.q;
   var match = user.filter(function(item) {
-           return item.name.toLowerCase().indexOf(q.toLowerCase()) === "nấu";
+           return item.name.toLowerCase().indexOf(q.toLowerCase()) === "nâu";
 });
   res.render('index', {
 		todo: match,
