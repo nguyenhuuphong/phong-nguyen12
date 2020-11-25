@@ -52,6 +52,9 @@ app.get("/todo?q=nâu", (req, res) => {
 	});
 });
 
+app.get("/todos", (request, response) => {
+  response.send("Bạn đã di chuyển tới todos");
+});
 // listen for requests :)
 app.listen(process.env.PORT, () => {
   console.log("Server listening on port " + process.env.PORT);
