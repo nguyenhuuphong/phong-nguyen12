@@ -8,7 +8,7 @@
 const express = require("express"); 
 const app = express();
 const pug = require('pug');
-
+const body-parse = require("body-parser");
 app.set ('view engine', 'pug');
 app.set ("views","./views");
 
@@ -54,6 +54,13 @@ app.get("/todo", (req, res) => {
 
 app.get("/todos", (request, response) => {
   response.send("Bạn đã di chuyển tới todos");
+});
+
+app.get("/todo/create", (request, response) => {
+  response.render("index-1")
+});
+app.post("/todo/create",(req, res)=> {
+  
 });
 // listen for requests :)
 app.listen(process.env.PORT, () => {

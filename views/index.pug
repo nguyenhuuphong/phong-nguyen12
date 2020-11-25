@@ -5,3 +5,9 @@ form(action="/todos", method="GET")
 ul 
    each user in todo
     li= user.name
+    
+form(action="/todo/create", method="POST")
+     label name
+     br
+     input(type/text, name="todo")
+     button Create
