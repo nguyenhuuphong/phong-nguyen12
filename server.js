@@ -8,10 +8,14 @@
 const express = require("express"); 
 const app = express();
 const pug = require('pug');
-const body-parse = require("body-parser");
+var  bodyParser = require("body-parser");
+
+
 app.set ('view engine', 'pug');
 app.set ("views","./views");
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
   response.send("tôi yêu coder");
@@ -57,10 +61,11 @@ app.get("/todos", (request, response) => {
 });
 
 app.get("/todo/create", (request, response) => {
-  response.render("index-1")
+  response.render("index")
 });
 app.post("/todo/create",(req, res)=> {
-  
+  user.push(req.body);
+  //res.redirect("/todo")
 });
 // listen for requests :)
 app.listen(process.env.PORT, () => {
