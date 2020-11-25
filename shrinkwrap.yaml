@@ -1,4 +1,6 @@
 dependencies:
+  body-parse: 0.1.0
+  body-parser: 1.19.0
   express: 4.17.1
   pug: 3.0.0
 packages:
@@ -57,6 +59,10 @@ packages:
       node: '>= 10.0.0'
     resolution:
       integrity: sha512-GAwkz0AihzY5bkwIY5QDR+LvsRQgB/B+1foMPvi0FZPMl5fjD7ICiznUiBdLYMH1QYe6vqu4gWYytZOccLouFw==
+  /body-parse/0.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-k0PDF7vZZpspXlwoM8ywh9PIHZokooS0Rek4M8Vekoro7XuuaWVhjgTpdzIRrfKj5oLQahwjn621/4kG4d91xw==
   /body-parser/1.19.0:
     dependencies:
       bytes: 3.1.0
@@ -652,5 +658,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  body-parse: ^0.1.0
+  body-parser: ^1.19.0
   express: ^4.17.1
   pug: ^3.0.0
