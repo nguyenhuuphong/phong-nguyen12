@@ -28,6 +28,7 @@ app.get("/todo", (req, res) => {
     todo: user
 });
 });
+/*
 app.get("/todo/123", (req, res) => {
   var q = req.query.q;
   var   match = user.filter(function(item) {
@@ -39,11 +40,11 @@ app.get("/todo/123", (req, res) => {
 	});
 
 });
-
+*/
 app.get("/todo?q=nâu", (req, res) => {
 
   var   match = user.filter(function(item) {
-           return item.name.indexOf("đi chợ");
+           return item.name.indexOf("đi") !== -1;
 
   });
   res.render('index', {
