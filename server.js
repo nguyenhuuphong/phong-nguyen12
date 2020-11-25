@@ -14,7 +14,7 @@ app.set ("views","./views");
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
-  response.send("tôi yêu lập trình");
+  response.render("tôi yêu lập trình <a href="/todo">go todo</a>");
 });
  
 var user =[ 
@@ -43,11 +43,11 @@ app.get("/todo/123", (req, res) => {
 */
 app.get("/todo?q=nâu", (req, res) => {
 
-  var   match = user.filter(function(item) {
-           return item.name.indexOf("đi") !== -1;
+  var   match = user.find(function(item) {
+           return item.name == item.indexOf("đi");
 
   });
-  res.render('index', {
+  res.render('index-1', {
 		todo: match 
 	});
 });
